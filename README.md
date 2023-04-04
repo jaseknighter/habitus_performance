@@ -72,7 +72,7 @@ https://llllllll.co/t/deep-tissue-pdx-live-performance-4-1-and-stream-4-2/61496<
 * 3 sisters: output[4].action = lfo(0.5,0.5);output[4].action()
 
 
-## actual druid log from druid on 4/2 @ psu boiler room theatre
+## commands sent to druid during the 4/2 performance @ psu's boiler room theatre
 ^^clear        
 ^^reset                                                                                     
 u perf.lua                                                                                  
