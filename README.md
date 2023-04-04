@@ -38,7 +38,7 @@ https://llllllll.co/t/deep-tissue-pdx-live-performance-4-1-and-stream-4-2/61496<
 * some lfo (output3) futzing
 * change velo sequins
 * play w/delay 
-* bring down fatesorange mix
+* bring down fatesblue (rpls) mix
 * bring up fates orange (oooooo) softcut
 * start fade out for end
 * some jf lfo (output3) futzing
