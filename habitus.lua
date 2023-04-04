@@ -16,16 +16,16 @@ function init()
   hs.mel_add = s{0}
   output[2].action = ar() -- assign a simple AR envelope to output 2
 
-  hs.r1 = s{1,1,0.5}
+  hs.r1 = s{1,1,0.5} -- rhythm1 sequins
   hs.r1 = hs.r1*4
-  hs.o1=s{0}
-  hs.m1=s{1,3,5,7}
-  hs.p1=tl.loop{hs.r1, {make_note,hs.m1,1}}
+  hs.o1=s{0} -- octave1 sequins
+  hs.m1=s{1,3,5,7} -- melody1 sequins
+  hs.p1=tl.loop{hs.r1, {make_note,hs.m1,1}} --loop timeline 1
 
-  hs.r2 = s{1,1,3}
-  hs.o2=s{0}
-  hs.m2=s{1,1,3}
-  hs.p2=tl.queue():loop{hs.r2, {make_note,hs.m2,2}}
+  hs.r2 = s{1,1,3} -- rhythm2 sequins
+  hs.o2=s{0} -- octave2 sequins
+  hs.m2=s{1,1,3} -- melody2 sequins
+  hs.p2=tl.queue():loop{hs.r2, {make_note,hs.m2,2}} --loop timeline 2
 end
 
 function find_note(n)
@@ -45,9 +45,7 @@ function make_note(n,voice)
   if voice == 1 then
     oct = hs.o1() * 12
   elseif voice == 2 then
-    oct = hs.o2() * 12
-  elseif voice == 3 then
-    oct = hs.o3() * 12    
+    oct = hs.o2() * 12    
   end
   local mel_add = math.floor(hs.mel_add())
   mel_add = mel_add > 0 and mel_add or 0
