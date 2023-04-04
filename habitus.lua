@@ -14,7 +14,7 @@ function init()
   scale = hs.lydian
   hs.velo = s{8}
   hs.mel_add = s{0}
-	output[2].action = ar() -- assign a simple AR envelope to output 2
+  output[2].action = ar() -- assign a simple AR envelope to output 2
 
   hs.r1 = s{1,1,0.5}
   hs.r1 = hs.r1*4
