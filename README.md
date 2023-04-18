@@ -74,34 +74,34 @@ https://llllllll.co/t/deep-tissue-pdx-live-performance-4-1-and-stream-4-2/61496<
 
 ## commands sent to druid during the 4/2 performance @ psu's boiler room theatre
 ^^clear        
-^^reset                                                                                     
-u perf.lua                                                                                  
-hs.p2:play()                                                                                
-hs.o2=s{1}                                                                                  
-hs.o2=s{1,0}                                                                                
-hs.o2=s{1,0,2}                                                                              
-hs.o2=s{1,0}                                                                                
-hs.o1=s{-1}                                                                                 
-hs.o1=s{-1,0}                                                                               
-hs.o1=s{-1,0,1}                                                                             
-hs.r1=hs.r1 * 3                                                                               
-hs.r1=hs.r1 * 2.5                                                                           
-hs.r1=hs.r1 * 3                                                                             
-hs.r1=hs.r1 * 2.5                                                                           
-hs.r1=hs.r1 * 2.25                                                                          
-hs.r1=hs.r1 * 2.1                                                                           
-hs.r1=hs.r1 * 1.6                                                                           
-hs.r1=hs.r1 * s{1,2}                                                                        
-hs.r1=hs.r1 * s{1,2,0.7}                                                                    
-hs.r1=hs.r1 * s{1,1,0.7}                                                                    
-hs.r1=hs.r1 * s{1,1,0.5}                                                                    
-hs.r1=hs.r1 * s{1,0.5,0.5}       
-melody_add_note=s{s{0}, s{4}, s{6}, s{1}, s{4}, s{2}, s{4}}                                     
-function melmix() hs.mel_add = s{melody_add_note()} end                                   
-score_melody = timeline.queue():score{0, melmix,8, melmix,16,melmix,24,melmix,32,melmix,40,melmix,48, 'reset'}                                                                       
-hs.mel_add=s{2}                                                                           
-hs.mel_add=s{0}                                                                           
-hs.mel_add=s{4}                                                                           
-hs.mel_add=s{2}                                                                           
-hs.mel_add=s{1}     
+^^reset
+u perf.lua
+hs.p2:play()
+hs.o2=s{1}
+hs.o2=s{1,0}
+hs.o2=s{1,0,2}
+hs.o2=s{1,0}
+hs.o1=s{-1}
+hs.o1=s{-1,0}
+hs.o1=s{-1,0,1}
+hs.r1=hs.r1 * 3
+hs.r1=hs.r1 * 2.5
+hs.r1=hs.r1 * 3
+hs.r1=hs.r1 * 2.5
+hs.r1=hs.r1 * 2.25
+hs.r1=hs.r1 * 2.1
+hs.r1=hs.r1 * 1.6
+hs.r1=hs.r1 * s{1,2}
+hs.r1=hs.r1 * s{1,2,0.7}
+hs.r1=hs.r1 * s{1,1,0.7}
+hs.r1=hs.r1 * s{1,1,0.5}
+hs.r1=hs.r1 * s{1,0.5,0.5}
+melody_add_note=s{s{0}, s{4}, s{6}, s{1}, s{4}, s{2}, s{4}}
+function melmix() hs.mel_add = s{melody_add_note()} end
+score_melody = timeline.queue():score{0, melmix,8, melmix,16,melmix,24,melmix,32,melmix,40,melmix,48, 'reset'}
+hs.mel_add=s{2}
+hs.mel_add=s{0}
+hs.mel_add=s{4}
+hs.mel_add=s{2}
+hs.mel_add=s{1}
 score_melody:play()
