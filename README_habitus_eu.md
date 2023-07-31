@@ -7,23 +7,23 @@ https://llllllll.co/t/deep-tissue-pdx-live-performance-4-1-and-stream-4-2/61496<
 ### equipment setup
 * nornsblue outputs -> nornsorange inputs
 * nornsorange outputs -tx-6 inputs 5/6
-* tx-6 headphones ->bestie ->endless processor right
+* tx-6 headphones ->bestie ->endless processor right and left
 * sloths apathy x ->jf ramp
+* IMPORTANT: disconnect left crow output 1 to EP layer
 * w/ syn out ->3sisters low input
 * jf out1 ->3sis span
 * jf out6 ->3sis fm
-* 3sis low out ->endless processor left
-* endless processor outs to w/ del in
+* endless processor outs to 3sis all
+* 3sis low out -> w/ del in
 * w/ del out ->rip A
 * rip out ->tx-6 input 1
-* wingie2 out ->tx-6 input 2
-* wingie1 to ?????
 * hachi-ni midi out ->wingie2 midi in
-* tx-6 main out ->PA system
+* tx-6 main out -> wingie
+* wingie -> PA system
 
 
 ### performance setup
-* tp-6 reverb to light and off
+* tx-6 reverb to light and off
 * confirm everything computer and norns are connected to wifi
 * clear terminal
 * load norns perf psets
@@ -31,7 +31,7 @@ https://llllllll.co/t/deep-tissue-pdx-live-performance-4-1-and-stream-4-2/61496<
 * reset w/del settings 3x
 * jf controls to noon
 * sisters controls at noon
-* bestie feedback: off
+* bestie feedback: on
 * norns mixers tp: off
 * norns mixers mon: on
 * start druid
@@ -39,24 +39,31 @@ https://llllllll.co/t/deep-tissue-pdx-live-performance-4-1-and-stream-4-2/61496<
 ### #############################
 ### macro performance notes
 ### #############################
-* start with birds (no flora)
-* record birds in graintopia
-* norns inputs (tp-6 5-6) off
-* bring up flora
-* make endless process recordings with flora, then birds
+* turn up wingie resonator to ~50%
+* start with flora resonated
+* bestie feedback to 50% and input 1 cranked
+* bring up flora in euro with 
+* make endless process recordings with flora and different levels of feedback
+* record flora in graintopia with wingie resonator and bestie feedback up hi
 * connect left crow output 1 to EP layer
-* record flora in graintopia, land 2
-* bring down nornsblue tp and eng
-* bring up norns inputs tp-6 5-6 to hear graintopia
-* start ferry to oulu recording
+* bring up norns inputs tx-6 5-6 to hear graintopia
+* bring down bestie feedback and wingie resonator
+* bring down nornsblue tx and eng
+* load the birds 
+* bring up the birds and explore graintopia params
 * start wsyn exploration
 * set wdel mod rate and mod amount
+* start ferry to oulu recording
+* bring down euro (tx-6 channel 1)
 * start flora exploration
 * start flora tintinnabli in maiden
-* bring up reverb
 * bring up eurorack
+* turn on reverb
+* bring up reverb
+* bring up bestie feedback
 * resonate
-* tps: sudden volume off, then in and out and done
+* bring up tape
+* txs: sudden volume off, then in and out and done
 
 ### #############################
 ### performance additions
@@ -82,10 +89,13 @@ https://llllllll.co/t/deep-tissue-pdx-live-performance-4-1-and-stream-4-2/61496<
 ## druid wsyn explorations
 ### ##########################
 u tintinnabuli.lua
+hs.velo=s{0.05}
+hs.velo=s{0.1}
 hs.velo=s{0.25}
 hs.velo=s{0.5} 
 hs.velo=s{1}
-hs.velo=s{2,1,}
+hs.velo=s{2,1}
+hs.velo=s{1,2,0.1,3,0.25}   
 
 m_scale = generate_scale(0, hs.lydian, #hs.lydian);
 t_scale = generate_scale(0, hs.lydian, #hs.lydian)
@@ -97,13 +107,13 @@ hs.m1=s{1,3,5,7} -- melody1 sequins
 
 hs.m1=s{8,9,7,6} -- melody1 sequins
 
-hs.r2=hs.r2*s{1,0.5}
-hs.r2=hs.r2*s{1,0.25}
-hs.r2=hs.r2*s{0.25}
-hs.r2=hs.r2*s{1,0.25,1,0.5}  
+hs.o2=s{-1,0}
+hs.r2=s{1,0.5}
+hs.r2=s{1,0.25}
+hs.r2=s{1,0.25,1,0.5}  
 
 
---new wsyn sounds
+SKIP--new wsyn sounds
 melody_wsyn_settings = pluckylogger_vals("long");
 tin_wsyn_settings = pluckylogger_vals()
 
@@ -111,33 +121,12 @@ original wsyn sounds
 melody_wsyn_settings = {2.6, -0.2, 3.5, -3.2, 1.0, -2.0, -3.7};
 tin_wsyn_settings = WSYN_SETTINGS_DEFAULT
 
-hs.velo=s{1,2,0,3,0.25}   
+<!-- hs.velo=s{0.25,0.1,0.25,0,0.5}    -->  
 
--- return to original r2 rhythm
-tin_r2 = s{1,1,3}
-
-hs.mel_add=s{2}
-hs.mel_add=s{0}
-hs.mel_add=s{4}
-hs.mel_add=s{2}
-hs.mel_add=s{1}
-
-
-score_melody:play()
-
-
-hs.m1=s{1,3,5,7} -- melody1 sequins
-
-hs.m1=s{8,9,7,6} -- melody1 sequins
-  
-
--- interesting melody_wsyn_settings
+-- SKIP!!!! melody_wsyn_settings
 melody_wsyn_settings ={2.6, -0.2, 3.5, -3.2, 1.0, -2.0, -3.7}
 melody_wsyn_settings ={2.0,  0.0,  3.9,  -4.6,  0.6666667,  0.4,  -4.5}
 
--- low tone sequence
-hs.o1=s{-2,0}  
-hs.o2=s{-2,0} 
 
 -----------------------------------------------------
 -- flora tintinabulli
@@ -148,17 +137,24 @@ stop with `tin_p2:stop()`
 change the octave:
 
 tin_o2=s{2}
+tin_o2=s{2,3}
 
 change the rhythms:
-tin_p2=tl.queue():loop{0.5, {tintinnabluize,tin_m2},1, {tintinnabluize,tin_m2},0.5, {tintinnabluize,tin_m2},};tin_p2:play()
+tin_p2:stop();
+tin_p2:stop();tin_p2=tl.queue():loop{0.5, {tintinnabluize,tin_m2},1, {tintinnabluize,tin_m2},0.5, {tintinnabluize,tin_m2},};tin_p2:play()
 
-tin_p2=tl.queue():loop{0.5, {tintinnabluize,tin_m2},0.25, {tintinnabluize,tin_m2},0.5, {tintinnabluize,tin_m2},};tin_p2:play()
+tin_p2:stop();
+tin_p2:stop();tin_p2=tl.queue():loop{0.5, {tintinnabluize,tin_m2},0.25, {tintinnabluize,tin_m2},0.5, {tintinnabluize,tin_m2},};tin_p2:play()
 
-tin_p2=tl.queue():loop{0.1, {tintinnabluize,tin_m2},0.25, {tintinnabluize,tin_m2},0.5, {tintinnabluize,tin_m2},};tin_p2:play()
+tin_p2:stop();
+tin_p2:stop();tin_p2=tl.queue():loop{0.1, {tintinnabluize,tin_m2},0.25, {tintinnabluize,tin_m2},0.5, {tintinnabluize,tin_m2},};tin_p2:play()
 
-tin_p2=tl.queue():loop{1, {tintinnabluize,tin_m2},1, {tintinnabluize,tin_m2},1, {tintinnabluize,tin_m2},};tin_p2:play()
+tin_p2:stop();
+tin_p2:stop();tin_p2=tl.queue():loop{1, {tintinnabluize,tin_m2},1, {tintinnabluize,tin_m2},1, {tintinnabluize,tin_m2},};tin_p2:play()
 
-tin_p2:stop();tin_p2=tl.queue():loop{1, {tintinnabluize,tin_m2},3, {tintinnabluize,tin_m2},3, {tintinnabluize,tin_m2},};tin_p2:play()
+tin_p2:stop();
+tin_p2:stop();tin_p2:stop();tin_p2=tl.queue():loop{1, {tintinnabluize,tin_m2},3, {tintinnabluize,tin_m2},3, {tintinnabluize,tin_m2},};tin_p2:play()
+
 
 -----------------------------------------------------
 -- set wsyn voices with pluckylogger

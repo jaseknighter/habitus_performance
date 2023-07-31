@@ -46,7 +46,7 @@ function init()
   t_scale = generate_scale(0, hs.lydian, #hs.lydian)
   ]]
   humanize = 0.05
-  hs.velo = s{0.1}
+  hs.velo = s{0}
   hs.mel_add = s{0}
   output[2].action = ar() -- assign a simple AR envelope to output 2
 
